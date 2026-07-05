@@ -113,4 +113,5 @@ wss.on("connection", (ws) => {
   ws.on("close", () => clearInterval(timer));
 });
 
-server.listen(4000, () => console.log("mock on http://localhost:4000 (ws://localhost:4000/ws)"));
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => console.log(`mock server listening on port ${PORT}`));
